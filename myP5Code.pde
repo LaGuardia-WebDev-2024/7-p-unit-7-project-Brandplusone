@@ -15,24 +15,18 @@ float mouthColor = 65; // Variable for mouth color animation
 void draw() {
   background(220); 
   
-  // 🎯 Animate Face Position
-  faceX += faceSpeed;
-  if (faceX > width - 150 || faceX < 150) {
-    faceSpeed *= -1; // Reverse direction when hitting canvas edges
-  }
+  faceX=faceX+5; 
+  mouthColor=mouthColor+2;
+  faceSpeed=faceSpeed+5;
+  eyeSize=eyeSize+7
+   if(faceX>260){faceX=5}
+  if(mouthColor>300){mouthColor=65}
+  if(eyeSize>50){eyeSize=65}
   
-  // 🎯 Animate Eye Size
-  eyeSize += eyeSizeChange;
-  if (eyeSize > 50 || eyeSize < 30) {
-    eyeSizeChange *= -1; // Reverse direction when reaching size limits
-  }
-  
-  // 🎯 Animate Mouth Color
-  mouthColor = (mouthColor + 1) % 256; // Cycle through color values
   
   // Draw Face
-  fill(255, 255, 0); // Yellow face
-  ellipse(faceX, 208, 300, 300); // Face follows faceX
+  fill(225, 145, 0); // Yellow face
+  ellipse(faceX, 208, 300, 300); 
   
   // Draw Eyes
   fill(46, 46, 41); // Dark eyes
